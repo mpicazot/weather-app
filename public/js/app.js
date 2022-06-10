@@ -15,6 +15,11 @@ weatherForm.addEventListener('submit', (e) => {
     fetch('/weather?city=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
+                address.textContent = "";
+                temperature.textContent  = "";
+                weatherDesc.textContent = "";
+                weatherIcon.src = "";
+                timestamp.textContent = "";
                 errorMsg.textContent = "Error, por favor introduce una dirección válida!";
             }
             else {
